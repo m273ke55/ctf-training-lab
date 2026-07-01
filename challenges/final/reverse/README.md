@@ -1,3 +1,9 @@
 # Финальные задачи: Reverse
 
-Позже здесь будут добавлены 3 задачи: rev-easy-strings-attached, rev-medium-check-me, rev-hard-pyc-lockbox. Для каждой задачи нужны `challenge.md`, `solve.md`, `hints.md`, `flag.txt`, `challenge.yml`, `dist/` и `src/`.
+В этой категории реализованы три безопасные локальные задачи без обязательной сборки C/ELF/EXE:
+
+- `rev-easy-strings-attached` — поиск корректного флага среди читаемых строк псевдобинарного файла.
+- `rev-medium-check-me` — анализ Python-скрипта, который проверяет ввод через XOR и список чисел.
+- `rev-hard-pyc-lockbox` — анализ `.pyc` через `dis`, `marshal` и восстановление простой проверки флага.
+
+Все публичные артефакты создаются генераторами `src/generate.py` в соответствующих каталогах `dist/`. Generated-файлы из `dist/` не хранятся в git; отслеживается только `dist/.gitkeep`.

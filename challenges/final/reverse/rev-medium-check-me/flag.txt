@@ -1,0 +1,1 @@
+edu_ctf{check_me_ok}

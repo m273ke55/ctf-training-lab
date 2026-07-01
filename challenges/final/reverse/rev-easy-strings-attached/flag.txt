@@ -1,0 +1,1 @@
+edu_ctf{strings_attached}

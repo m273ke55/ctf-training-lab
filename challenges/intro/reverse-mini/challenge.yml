@@ -1,0 +1,21 @@
+name: Мини-задача Reverse: строки
+category: Reverse
+difficulty: intro
+points: 0
+description: |
+  Безопасная локальная задача на первичный Reverse-анализ: определить тип файла и найти читаемые строки.
+flags:
+  - edu_ctf{mini_reverse_strings}
+hints:
+  - text: "Начните с определения типа файла и поиска читаемых строк."
+    cost: 0
+  - text: "Команды `file`, `strings` и `grep` здесь важнее запуска файла."
+    cost: 10
+  - text: "Отфильтруйте вывод `strings` по `edu_ctf`."
+    cost: 25
+files:
+  - dist/mini_blob.bin
+tags:
+  - reverse
+  - strings
+  - beginner

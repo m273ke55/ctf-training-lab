@@ -1,0 +1,21 @@
+name: Средняя задача Reverse: проверь меня
+category: Reverse
+difficulty: medium
+points: 200
+description: |
+  Python-скрипт проверяет ввод через XOR и список чисел. Запускать скрипт необязательно: правильный флаг восстанавливается чтением логики.
+flags:
+  - edu_ctf{check_me_ok}
+hints:
+  - text: "Не подбирайте флаг вручную: посмотрите, как программа проверяет введённую строку."
+    cost: 0
+  - text: "Откройте `check_me.py` и найдите константы `KEY` и `DATA`."
+    cost: 25
+  - text: "Каждый символ флага восстанавливается обратной операцией `chr(value ^ KEY)`."
+    cost: 50
+files:
+  - dist/check_me.py
+tags:
+  - reverse
+  - python
+  - medium
