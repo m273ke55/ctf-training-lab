@@ -1,4 +1,4 @@
-# Криптография Medium: repeating XOR
+# Средняя задача Cryptography: repeating XOR
 
 Файл `ciphertext.hex` содержит flag, зашифрованный коротким повторяющимся XOR-ключом.
 
