@@ -1,0 +1,3 @@
+# Forensics
+
+File signatures и magic bytes показывают настоящий тип. `xxd` смотрит байты, `binwalk` ищет вложения, `foremost` восстанавливает файлы, `unzip` работает с архивами, Wireshark/tshark анализируют PCAP, `strings` ищет текст. Порядок: тип → hex → строки → вложения → метаданные/трафик.
