@@ -1,0 +1,21 @@
+name: Демонстрация Forensics: magic bytes
+category: Forensics
+difficulty: intro
+points: 0
+description: |
+  Демонстрационная задача: файл имеет обманчивое расширение, а настоящий тип определяется по содержимому и magic bytes.
+flags:
+  - edu_ctf{forensics_demo_magic}
+hints:
+  - text: "Расширению файла нельзя доверять полностью."
+    cost: 0
+  - text: "Используйте file и xxd."
+    cost: 0
+  - text: "Прочитайте файл как текст после проверки первых байтов."
+    cost: 0
+files:
+  - dist/mystery.jpg
+tags:
+  - forensics
+  - magic-bytes
+  - intro

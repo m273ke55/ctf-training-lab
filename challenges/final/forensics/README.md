@@ -1,3 +1,13 @@
 # Финальные задачи: Forensics
 
-Позже здесь будут добавлены 3 задачи: forensics-easy-file-signature, forensics-medium-hidden-archive, forensics-hard-traffic-note. Для каждой задачи нужны `challenge.md`, `solve.md`, `hints.md`, `flag.txt`, `challenge.yml`, `dist/` и `src/`.
+Эта категория содержит безопасные локальные учебные задачи по цифровой криминалистике: определение типа файла по содержимому, поиск приклеенных архивов и анализ небольшого сетевого дампа.
+
+## Реализованные задачи
+
+| Challenge | Сложность | Баллы | Концепция |
+| --- | --- | ---: | --- |
+| `forensics-easy-file-signature` | easy | 100 | определение ZIP-архива по magic bytes несмотря на неверное расширение |
+| `forensics-medium-hidden-archive` | medium | 200 | поиск ZIP-архива, приклеенного к концу JPEG-файла |
+| `forensics-hard-traffic-note` | hard-but-fair | 300 | анализ PCAP, поиск HTTP-ответа и декодирование base64-заметки |
+
+Все публичные артефакты генерируются в каталог `dist/` каждой задачи скриптом `src/generate.py`.

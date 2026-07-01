@@ -1,0 +1,22 @@
+name: Сложная задача Forensics: заметка в трафике
+category: Forensics
+difficulty: hard-but-fair
+points: 300
+description: |
+  В небольшом PCAP нужно найти HTTP-ответ с заметкой, декодировать значение note из base64 и получить флаг.
+flags:
+  - edu_ctf{traffic_note_found}
+hints:
+  - text: "В трафике есть читаемый прикладной протокол."
+    cost: 0
+  - text: "Используйте фильтр http в Wireshark или команду strings."
+    cost: 30
+  - text: "Найдите note=... и декодируйте значение как base64."
+    cost: 75
+files:
+  - dist/traffic.pcap
+tags:
+  - forensics
+  - pcap
+  - http
+  - base64

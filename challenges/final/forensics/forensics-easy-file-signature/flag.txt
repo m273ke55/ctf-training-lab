@@ -1,0 +1,1 @@
+edu_ctf{magic_bytes_win}
