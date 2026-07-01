@@ -1,0 +1,20 @@
+name: Мини-задача Reverse: логика
+category: Reverse
+difficulty: intro
+points: 0
+description: |
+  Передан небольшой Python-checker. Запускать его необязательно: полезнее прочитать код, найти `SHIFT` и `DATA`, а затем понять обратное преобразование для восстановления флага.
+flags:
+  - edu_ctf{intro_reverse_logic}
+hints:
+  - text: "Откройте `tiny_checker.py` как обычный текстовый файл и найдите константы `SHIFT` и `DATA`."
+    cost: 0
+  - text: "В массиве лежат значения `ord(ch) + SHIFT` для каждого символа флага."
+    cost: 0
+  - text: "Чтобы восстановить символ, вычтите `SHIFT` из числа и примените `chr(...)`."
+    cost: 0
+files:
+  - dist/tiny_checker.py
+tags:
+  - reverse
+  - bonus

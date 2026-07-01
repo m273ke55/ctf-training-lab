@@ -1,0 +1,20 @@
+name: Бонусная задача Forensics: история в логах
+category: Forensics
+difficulty: medium
+points: 200
+description: |
+  В серверном логе среди обычных событий есть подозрочная `debug_note` с base64 `payload`. Найдите строку и восстановите флаг из данных в логе.
+flags:
+  - edu_ctf{logs_tell_story}
+hints:
+  - text: "В логе есть необычное событие среди обычных запросов."
+    cost: 0
+  - text: "Найдите строку с `debug_note` и `payload=`."
+    cost: 25
+  - text: "Значение `payload` нужно декодировать как base64."
+    cost: 50
+files:
+  - dist/server.log
+tags:
+  - forensics
+  - bonus

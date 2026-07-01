@@ -1,0 +1,20 @@
+name: Мини-задача Forensics: ZIP под маской
+category: Forensics
+difficulty: intro
+points: 0
+description: |
+  Публичный файл выглядит как `unknown.dat`, но расширению не всегда можно доверять. Определите настоящий тип файла и проверьте его содержимое.
+flags:
+  - edu_ctf{intro_zip_magic}
+hints:
+  - text: "Проверьте файл командой `file` или посмотрите первые байты через `xxd`."
+    cost: 0
+  - text: "ZIP-архив начинается с узнаваемой сигнатуры `PK`."
+    cost: 0
+  - text: "Откройте файл как ZIP и прочитайте `note.txt`."
+    cost: 0
+files:
+  - dist/unknown.dat
+tags:
+  - forensics
+  - bonus

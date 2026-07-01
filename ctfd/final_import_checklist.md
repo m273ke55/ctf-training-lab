@@ -74,6 +74,10 @@
 - [ ] `cryptography-mini`
 - [ ] `steganography-demo`
 - [ ] `steganography-mini`
+- [ ] `reverse-extra-mini`
+- [ ] `forensics-extra-mini`
+- [ ] `cryptography-extra-mini`
+- [ ] `steganography-extra-mini`
 
 Для каждой intro-задачи проверьте название, категорию, нулевые баллы, флаг, подсказки и публичный файл из `dist/`.
 
@@ -91,6 +95,10 @@
 - [ ] `stego-easy-exif-note`
 - [ ] `stego-medium-lsb-image`
 - [ ] `stego-hard-audio-spectrogram`
+- [ ] `rev-bonus-js-checker`
+- [ ] `forensics-bonus-log-timeline`
+- [ ] `crypto-bonus-vigenere-keyword`
+- [ ] `stego-bonus-audio-lsb`
 
 Для каждой final-задачи проверьте сложность, баллы, флаг, подсказки и публичные файлы из `dist/`.
 
@@ -105,4 +113,4 @@ python3 scripts/package_dist.py
 find build/packages -maxdepth 1 -type f -name '*.zip' | sort
 ```
 
-Ожидаемый результат — 20 zip-архивов: 8 intro-задач и 12 final-задач. После загрузки в CTFd откройте каждую задачу в режиме предпросмотра, скачайте публичные файлы и убедитесь, что флаг принимается только в формате `edu_ctf{...}`.
+Ожидаемый результат — 28 zip-архивов: 12 intro-задач и 16 final-задач. После загрузки в CTFd откройте каждую задачу в режиме предпросмотра, скачайте публичные файлы и убедитесь, что флаг принимается только в формате `edu_ctf{...}`.

@@ -1,0 +1,20 @@
+name: Бонусная задача Reverse: JavaScript checker
+category: Reverse
+difficulty: medium
+points: 200
+description: |
+  Дан JavaScript checker. Флаг не хранится открытым текстом: восстановите строку по `KEY` и массиву чисел `DATA`.
+flags:
+  - edu_ctf{js_reverse_win}
+hints:
+  - text: "Посмотрите, какие константы используются в `checker.js`."
+    cost: 0
+  - text: "Найдите `KEY` и массив `DATA`."
+    cost: 25
+  - text: "Каждый символ восстанавливается как `chr(value ^ KEY)`."
+    cost: 50
+files:
+  - dist/checker.js
+tags:
+  - reverse
+  - bonus

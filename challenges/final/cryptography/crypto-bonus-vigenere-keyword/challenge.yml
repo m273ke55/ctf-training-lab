@@ -1,0 +1,21 @@
+name: Бонусная задача Cryptography: ключ Vigenere
+category: Cryptography
+difficulty: medium
+points: 200
+description: |
+  Даны ciphertext и заметка. Заметка мягко намекает на ключ для Vigenere, который нужно применить циклически для расшифровки флага.
+flags:
+  - edu_ctf{vigenere_bonus}
+hints:
+  - text: "Прочитайте `note.txt`: она намекает на ключ."
+    cost: 0
+  - text: "Ключ — английское слово для университетской территории."
+    cost: 25
+  - text: "Расшифруйте Vigenere с ключом `campus`."
+    cost: 50
+files:
+  - dist/ciphertext.txt
+  - dist/note.txt
+tags:
+  - cryptography
+  - bonus

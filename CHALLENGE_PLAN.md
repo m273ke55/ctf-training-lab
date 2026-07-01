@@ -407,3 +407,22 @@
 - **Подсказка 2:** используйте основной инструмент категории: `Audacity`.
 - **Подсказка 3:** примените метод: spectrogram.
 - **Почему подходит смешанной аудитории:** базовый путь даёт прогресс новичкам, а аккуратное оформление solver/объяснения даёт дополнительную работу сильным студентам.
+
+
+## Extension pack — реализовано
+
+После расширения в репозитории 28 задач: 12 intro-задач и 16 final-задач.
+
+### Дополнительные intro-задачи
+
+- `reverse-extra-mini` — Reverse, intro, Python-checker с `SHIFT` и `DATA`, флаг `edu_ctf{intro_reverse_logic}`. Статус: реализовано.
+- `forensics-extra-mini` — Forensics, intro, ZIP-архив с неверным расширением `.dat`, флаг `edu_ctf{intro_zip_magic}`. Статус: реализовано.
+- `cryptography-extra-mini` — Cryptography, intro, single-byte XOR, флаг `edu_ctf{intro_xor_byte}`. Статус: реализовано.
+- `steganography-extra-mini` — Steganography, intro, WAV/RIFF comment metadata, флаг `edu_ctf{intro_wav_comment}`. Статус: реализовано.
+
+### Дополнительные final bonus-задачи
+
+- `rev-bonus-js-checker` — Reverse, medium, 200 баллов, JavaScript checker с XOR-массивом, флаг `edu_ctf{js_reverse_win}`. Статус: реализовано.
+- `forensics-bonus-log-timeline` — Forensics, medium, 200 баллов, анализ server.log и base64 payload, флаг `edu_ctf{logs_tell_story}`. Статус: реализовано.
+- `crypto-bonus-vigenere-keyword` — Cryptography, medium, 200 баллов, Vigenere с ключом `campus`, флаг `edu_ctf{vigenere_bonus}`. Статус: реализовано.
+- `stego-bonus-audio-lsb` — Steganography, medium, 200 баллов, WAV LSB, флаг `edu_ctf{audio_lsb_whisper}`. Статус: реализовано.
