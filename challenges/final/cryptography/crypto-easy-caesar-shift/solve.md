@@ -1,20 +1,20 @@
-# Solution
+# Решение
 
-Try all alphabet rotations and look for text that matches the flag format.
+Переберите все повороты алфавита и найдите текст, похожий на формат flag.
 
-## Steps
+## Шаги
 
-1. Open `dist/ciphertext.txt` and copy the ciphertext.
-2. Try all 26 Caesar shifts.
-3. Stop when the plaintext contains a readable flag beginning with `edu_ctf{`.
+1. Откройте `dist/ciphertext.txt` и скопируйте ciphertext.
+2. Переберите все 26 сдвигов Caesar.
+3. Остановитесь, когда plaintext содержит читаемый flag, начинающийся с `edu_ctf{`.
 
-## Command
+## Команда
 
 ```bash
 python3 src/solve.py
 ```
 
-The script prints:
+Скрипт выводит:
 
 ```text
 edu_ctf{caesar_back}

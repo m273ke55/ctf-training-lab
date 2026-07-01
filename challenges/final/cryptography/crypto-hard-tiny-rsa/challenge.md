@@ -1,5 +1,5 @@
-# Crypto Hard: Tiny RSA
+# Криптография Hard: маленький RSA
 
-This RSA instance was made for a classroom lab and is much too small.
+Этот экземпляр RSA создан для учебной лабораторной работы и слишком мал для реальной защиты.
 
-The public values are in `public.txt`. Factor the modulus, recover the private exponent, and decrypt the blocks to find the flag.
+Публичные значения находятся в `public.txt`. Разложите модуль на множители, восстановите закрытую экспоненту и расшифруйте блоки, чтобы найти flag.

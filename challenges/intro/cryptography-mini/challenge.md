@@ -1,7 +1,7 @@
-# Cryptography Mini: Rotates
+# Мини-задача Cryptography: повороты
 
-Someone left you a message that was shifted through the alphabet.
+Кто-то оставил сообщение, сдвинутое по алфавиту.
 
-The result is in `ciphertext.txt`. Recover the flag in the usual `edu_ctf{...}` format.
+Результат лежит в `ciphertext.txt`. Восстановите flag в привычном формате `edu_ctf{...}`.
 
-This task is local and does not require any online service.
+Задача решается локально и не требует онлайн-сервисов.

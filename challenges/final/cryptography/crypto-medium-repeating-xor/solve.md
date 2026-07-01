@@ -1,24 +1,24 @@
-# Solution
+# Решение
 
-This task uses repeating-key XOR. XOR has a useful property: if `cipher = plain XOR key`, then `key = cipher XOR plain`.
+В задаче используется repeating-key XOR. У XOR есть полезное свойство: если `cipher = plain XOR key`, то `key = cipher XOR plain`.
 
-Because every flag starts with `edu_ctf{`, we can use that prefix as known plaintext.
+Так как каждый flag начинается с `edu_ctf{`, этот префикс можно использовать как known plaintext.
 
-## Steps
+## Шаги
 
-1. Read the hex ciphertext from `dist/ciphertext.hex`.
-2. Convert it to bytes.
-3. Try short key lengths.
-4. Recover key bytes from the known prefix where possible.
-5. Decrypt and keep the candidate that looks like `edu_ctf{...}`.
+1. Прочитайте hex-ciphertext из `dist/ciphertext.hex`.
+2. Преобразуйте его в bytes.
+3. Попробуйте короткие длины ключа.
+4. Восстановите байты ключа по известному префиксу там, где это возможно.
+5. Расшифруйте данные и оставьте кандидат, похожий на `edu_ctf{...}`.
 
-## Command
+## Команда
 
 ```bash
 python3 src/solve.py
 ```
 
-Expected output:
+Ожидаемый вывод:
 
 ```text
 edu_ctf{xor_key_found}

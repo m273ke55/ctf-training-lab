@@ -1,5 +1,5 @@
-# Crypto Medium: Repeating XOR
+# Криптография Medium: repeating XOR
 
-The file `ciphertext.hex` contains a flag encrypted with a short repeating-key XOR key.
+Файл `ciphertext.hex` содержит flag, зашифрованный коротким повторяющимся XOR-ключом.
 
-You know the plaintext is a normal CTF flag in the `edu_ctf{...}` format. Recover it.
+Известно, что plaintext — обычный CTF-флаг в формате `edu_ctf{...}`. Восстановите его.

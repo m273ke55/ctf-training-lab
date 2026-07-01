@@ -1,23 +1,23 @@
-# Solution
+# Решение
 
-The challenge uses textbook RSA with intentionally tiny primes. The flag is split into 4-byte blocks so every block is smaller than `n`.
+В задаче используется textbook RSA с намеренно маленькими простыми числами. Flag разделён на 4-байтовые блоки, поэтому каждый блок меньше `n`.
 
-## Steps
+## Шаги
 
-1. Read `n`, `e`, and the ciphertext blocks from `dist/public.txt`.
-2. Factor `n` by trial division.
-3. Compute `phi = (p - 1) * (q - 1)`.
-4. Compute the private exponent with `d = pow(e, -1, phi)`.
-5. Decrypt each block using `m = pow(c, d, n)`.
-6. Convert each decrypted integer back to 4 bytes and remove padding zeros.
+1. Прочитайте `n`, `e` и блоки ciphertext из `dist/public.txt`.
+2. Разложите `n` на множители пробным делением.
+3. Вычислите `phi = (p - 1) * (q - 1)`.
+4. Найдите закрытую экспоненту: `d = pow(e, -1, phi)`.
+5. Расшифруйте каждый блок: `m = pow(c, d, n)`.
+6. Преобразуйте каждое расшифрованное целое число обратно в 4 bytes и удалите нулевой padding.
 
-## Command
+## Команда
 
 ```bash
 python3 src/solve.py
 ```
 
-Expected output:
+Ожидаемый вывод:
 
 ```text
 edu_ctf{tiny_rsa_done}

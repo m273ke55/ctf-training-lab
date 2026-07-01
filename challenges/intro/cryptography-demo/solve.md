@@ -1,20 +1,20 @@
-# Solution
+# Решение
 
-For the live demo, start with the idea that encoding is a reversible representation, while encryption uses a rule or key. Here the rule is a Caesar shift, so only 26 possible rotations exist.
+Для демонстрации начните с идеи: encoding — это обратимое представление данных, а encryption использует правило или ключ. Здесь правило — сдвиг Caesar, поэтому возможны только 26 поворотов алфавита.
 
-## Steps
+## Шаги
 
-1. Open `dist/message.txt` and copy the ciphertext.
-2. Try all 26 Caesar shifts.
-3. Stop when the plaintext contains a readable flag beginning with `edu_ctf{`.
+1. Откройте `dist/message.txt` и скопируйте ciphertext.
+2. Переберите все 26 сдвигов Caesar.
+3. Остановитесь, когда plaintext содержит читаемый flag, начинающийся с `edu_ctf{`.
 
-## Command
+## Команда
 
 ```bash
 python3 src/solve.py
 ```
 
-The script prints:
+Скрипт выводит:
 
 ```text
 edu_ctf{crypto_demo_shift}

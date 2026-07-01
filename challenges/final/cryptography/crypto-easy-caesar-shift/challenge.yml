@@ -1,17 +1,17 @@
-name: Crypto Easy: Caesar Shift
+name: Криптография Easy: сдвиг Caesar
 category: Cryptography
 difficulty: easy
 points: 100
 description: |
-  A classical Caesar cipher where the correct shift reveals the standard flag format.
+  Классический шифр Caesar: правильный сдвиг раскрывает стандартный формат flag.
 flags:
   - edu_ctf{caesar_back}
 hints:
-  - text: "The expected plaintext includes the standard flag format."
+  - text: "Ожидаемый plaintext содержит стандартный формат flag."
     cost: 0
-  - text: "Try Caesar/ROT shifts."
+  - text: "Попробуйте сдвиги Caesar/ROT."
     cost: 10
-  - text: "Brute force all 26 reverse shifts and search for edu_ctf{."
+  - text: "Переберите все 26 обратных сдвигов и найдите edu_ctf{."
     cost: 25
 files:
   - dist/ciphertext.txt
