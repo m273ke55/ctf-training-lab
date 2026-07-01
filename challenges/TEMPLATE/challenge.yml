@@ -1,0 +1,21 @@
+# category может быть: Reverse, Forensics, Cryptography, Steganography
+name: Example Challenge
+category: Reverse
+difficulty: easy
+points: 100
+description: |
+  Example challenge description.
+flags:
+  - edu_ctf{example_flag}
+hints:
+  - text: "First gentle hint."
+    cost: 10
+  - text: "Tool-oriented hint."
+    cost: 25
+  - text: "Almost-solution hint."
+    cost: 50
+files:
+  - dist/example.txt
+tags:
+  - educational
+  - beginner
