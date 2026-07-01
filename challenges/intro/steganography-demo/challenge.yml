@@ -1,0 +1,21 @@
+name: Демонстрация Steganography: комментарий в PNG
+category: Steganography
+difficulty: intro
+points: 0
+description: |
+  Служебный текстовый chunk PNG содержит учебный флаг. Нужно заметить, что изображение хранит не только пиксели.
+flags:
+  - edu_ctf{stego_demo_comment}
+hints:
+  - text: "Картинка может хранить не только видимые пиксели."
+    cost: 0
+  - text: "Используйте strings для поиска читаемых строк."
+    cost: 0
+  - text: "Флаг лежит в текстовом chunk PNG."
+    cost: 0
+files:
+  - dist/picture.png
+tags:
+  - steganography
+  - png
+  - strings

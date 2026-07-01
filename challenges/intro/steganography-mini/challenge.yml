@@ -1,0 +1,21 @@
+name: Мини-практика Steganography: заметка в PNG
+category: Steganography
+difficulty: intro
+points: 0
+description: |
+  В PNG спрятана короткая текстовая заметка. Нужно найти флаг среди строк файла.
+flags:
+  - edu_ctf{mini_stego_chunk}
+hints:
+  - text: "Картинка может хранить не только видимые пиксели."
+    cost: 0
+  - text: "Используйте strings для поиска читаемых строк."
+    cost: 0
+  - text: "Флаг лежит в текстовом chunk PNG."
+    cost: 0
+files:
+  - dist/note_image.png
+tags:
+  - steganography
+  - png
+  - strings

@@ -1,0 +1,21 @@
+name: Средняя задача Steganography: LSB в PNG
+category: Steganography
+difficulty: medium
+points: 200
+description: |
+  Флаг спрятан в младших битах пиксельных байтов PNG.
+flags:
+  - edu_ctf{lsb_pixels_talk}
+hints:
+  - text: "Если картинка выглядит обычной, сообщение может быть в почти незаметных битах."
+    cost: 0
+  - text: "Проверьте LSB-канал, например через `zsteg`, или напишите небольшой Python-парсер PNG."
+    cost: 20
+  - text: "Распакуйте IDAT, пропускайте filter byte каждой строки и собирайте младшие биты пиксельных байтов до `}`."
+    cost: 50
+files:
+  - dist/pixels.png
+tags:
+  - lsb
+  - png
+  - zsteg
