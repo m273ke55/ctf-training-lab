@@ -1,0 +1,22 @@
+name: Средняя задача Forensics: архив внутри
+category: Forensics
+difficulty: medium
+points: 200
+description: |
+  К обычному JPEG приклеен ZIP-архив. Нужно найти вторую часть файла и извлечь флаг из заметки.
+flags:
+  - edu_ctf{archive_inside}
+hints:
+  - text: "Проверьте, нет ли дополнительных данных после основной картинки."
+    cost: 0
+  - text: "Используйте binwalk или ищите сигнатуру PK\x03\x04."
+    cost: 20
+  - text: "Вырежьте хвост файла с ZIP-сигнатуры и откройте его как архив."
+    cost: 50
+files:
+  - dist/holiday_photo.jpg
+tags:
+  - forensics
+  - binwalk
+  - zip
+  - appended-data

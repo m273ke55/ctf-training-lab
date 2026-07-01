@@ -1,0 +1,21 @@
+name: Мини-задача Forensics: strings
+category: Forensics
+difficulty: intro
+points: 0
+description: |
+  Мини-практика по поиску читаемых строк в небольшом бинарном артефакте.
+flags:
+  - edu_ctf{mini_forensics_strings}
+hints:
+  - text: "Ищите читаемые фрагменты внутри бинарного файла."
+    cost: 0
+  - text: "Подойдёт инструмент strings."
+    cost: 0
+  - text: "Отфильтруйте вывод strings по edu_ctf."
+    cost: 0
+files:
+  - dist/artifact.bin
+tags:
+  - forensics
+  - strings
+  - intro

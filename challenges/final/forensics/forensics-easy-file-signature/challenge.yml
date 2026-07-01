@@ -1,0 +1,21 @@
+name: Простая задача Forensics: сигнатура файла
+category: Forensics
+difficulty: easy
+points: 100
+description: |
+  Файл с обманчивым расширением нужно определить по magic bytes и открыть как ZIP-архив.
+flags:
+  - edu_ctf{magic_bytes_win}
+hints:
+  - text: "Не доверяйте расширению файла."
+    cost: 0
+  - text: "Проверьте file и xxd: первые байты похожи на ZIP."
+    cost: 10
+  - text: "Откройте report.pdf как ZIP и прочитайте flag.txt."
+    cost: 25
+files:
+  - dist/report.pdf
+tags:
+  - forensics
+  - magic-bytes
+  - zip

@@ -1,4 +1,0 @@
-# Tiny RSA public data. Ciphertext is encrypted in 4-byte blocks.
-n = 2502200483
-e = 65537
-c = 1774268080,1124431874,1348648275,121428132,1882679688,900443334
