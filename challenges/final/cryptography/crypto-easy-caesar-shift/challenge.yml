@@ -1,0 +1,21 @@
+name: Crypto Easy: Caesar Shift
+category: Cryptography
+difficulty: easy
+points: 100
+description: |
+  A classical Caesar cipher where the correct shift reveals the standard flag format.
+flags:
+  - edu_ctf{caesar_back}
+hints:
+  - text: "The expected plaintext includes the standard flag format."
+    cost: 0
+  - text: "Try Caesar/ROT shifts."
+    cost: 10
+  - text: "Brute force all 26 reverse shifts and search for edu_ctf{."
+    cost: 25
+files:
+  - dist/ciphertext.txt
+tags:
+  - cryptography
+  - caesar
+  - beginner

@@ -1,0 +1,22 @@
+name: Crypto Medium: Repeating XOR
+category: Cryptography
+difficulty: medium
+points: 200
+description: |
+  A short repeating-key XOR encrypted flag. Use the known flag prefix to recover the key.
+flags:
+  - edu_ctf{xor_key_found}
+hints:
+  - text: "Part of the plaintext is already known from the flag format."
+    cost: 20
+  - text: "Recover key bytes with ciphertext_byte XOR known_plaintext_byte."
+    cost: 40
+  - text: "Try key lengths 3 to 5 and decrypt candidates that start with edu_ctf{."
+    cost: 70
+files:
+  - dist/ciphertext.hex
+  - dist/note.txt
+tags:
+  - cryptography
+  - xor
+  - known-plaintext
