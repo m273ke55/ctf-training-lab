@@ -1,7 +1,7 @@
 name: Мини-задача Cryptography: повороты
 category: Cryptography
 difficulty: intro
-points: 50
+points: 0
 description: |
   Быстрая практика с ROT/Caesar после демонстрации.
 flags:

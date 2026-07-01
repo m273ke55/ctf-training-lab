@@ -1,13 +1,13 @@
-name: Криптография Medium: repeating XOR
+name: Средняя задача Cryptography: repeating XOR
 category: Cryptography
 difficulty: medium
 points: 200
 description: |
-  Flag зашифрован коротким repeating-key XOR. Используйте известный префикс flag, чтобы восстановить ключ.
+  Флаг зашифрован коротким repeating-key XOR. Используйте известный префикс flag, чтобы восстановить ключ.
 flags:
   - edu_ctf{xor_key_found}
 hints:
-  - text: "Часть plaintext уже известна из формата flag."
+  - text: "Часть plaintext уже известна из формата флага."
     cost: 20
   - text: "Восстановите байты ключа через ciphertext_byte XOR known_plaintext_byte."
     cost: 40

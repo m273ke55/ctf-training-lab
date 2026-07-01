@@ -1,13 +1,13 @@
-name: Криптография Easy: сдвиг Caesar
+name: Простая задача Cryptography: сдвиг Caesar
 category: Cryptography
 difficulty: easy
 points: 100
 description: |
-  Классический шифр Caesar: правильный сдвиг раскрывает стандартный формат flag.
+  Классический шифр Caesar: правильный сдвиг раскрывает стандартный формат флага.
 flags:
   - edu_ctf{caesar_back}
 hints:
-  - text: "Ожидаемый plaintext содержит стандартный формат flag."
+  - text: "Ожидаемый plaintext содержит стандартный формат флага."
     cost: 0
   - text: "Попробуйте сдвиги Caesar/ROT."
     cost: 10
