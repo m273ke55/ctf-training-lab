@@ -1,0 +1,21 @@
+name: Сложная задача Steganography: частоты в WAV
+category: Steganography
+difficulty: hard-but-fair
+points: 300
+description: |
+  WAV содержит последовательность тонов, которую можно изучить через spectrogram и восстановить как флаг.
+flags:
+  - edu_ctf{spectrogram_says_hi}
+hints:
+  - text: "Флаг не обязательно слышать, его можно увидеть."
+    cost: 0
+  - text: "Откройте файл как spectrogram в Audacity или Sonic Visualiser."
+    cost: 30
+  - text: "Последовательность частот кодирует символы флага."
+    cost: 75
+files:
+  - dist/signal.wav
+tags:
+  - wav
+  - spectrogram
+  - frequency-analysis

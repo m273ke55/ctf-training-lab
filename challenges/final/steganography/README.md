@@ -1,3 +1,13 @@
 # Финальные задачи: Steganography
 
-Позже здесь будут добавлены 3 задачи: stego-easy-exif-note, stego-medium-lsb-image, stego-hard-audio-spectrogram. Для каждой задачи нужны `challenge.md`, `solve.md`, `hints.md`, `flag.txt`, `challenge.yml`, `dist/` и `src/`.
+Эта категория содержит безопасные локальные учебные задачи по стеганографии: поиск заметки в метаданных, извлечение сообщения из LSB PNG и анализ тонов на spectrogram WAV-файла.
+
+## Реализованные задачи
+
+| Challenge | Сложность | Баллы | Концепция |
+| --- | --- | ---: | --- |
+| `stego-easy-exif-note` | easy | 100 | поиск JPEG COM-комментария через `exiftool` или `strings` |
+| `stego-medium-lsb-image` | medium | 200 | извлечение флага из младших битов пиксельных байтов PNG |
+| `stego-hard-audio-spectrogram` | hard-but-fair | 300 | восстановление строки по последовательности частот в WAV/spectrogram |
+
+Все публичные артефакты генерируются в каталог `dist/` каждой задачи скриптом `src/generate.py` и не хранятся в git, кроме `dist/.gitkeep`.

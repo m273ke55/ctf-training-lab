@@ -1,0 +1,21 @@
+name: Простая задача Steganography: заметка в метаданных
+category: Steganography
+difficulty: easy
+points: 100
+description: |
+  Комментарий JPEG похож на метаданные изображения и содержит скрытую заметку.
+flags:
+  - edu_ctf{exif_note_seen}
+hints:
+  - text: "Проверьте не только видимое изображение, но и служебные данные файла."
+    cost: 0
+  - text: "Используйте `exiftool dist/photo.jpg` или `strings dist/photo.jpg`."
+    cost: 10
+  - text: "Ищите JPEG-комментарий со строкой формата `edu_ctf{...}`."
+    cost: 25
+files:
+  - dist/photo.jpg
+tags:
+  - exiftool
+  - strings
+  - jpeg-comment
