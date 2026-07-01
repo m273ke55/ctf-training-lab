@@ -1,0 +1,21 @@
+name: Мини-задача Cryptography: один байт XOR
+category: Cryptography
+difficulty: intro
+points: 0
+description: |
+  Дан hex-шифртекст. Известно, что исходный текст является флагом формата `edu_ctf{...}`, а для шифрования использован простой single-byte XOR.
+flags:
+  - edu_ctf{intro_xor_byte}
+hints:
+  - text: "Сначала преобразуйте hex-строку обратно в bytes."
+    cost: 0
+  - text: "Single-byte XOR означает, что каждый байт шифртекста был XOR-нут одним и тем же ключом."
+    cost: 0
+  - text: "Переберите 256 ключей и оставьте результат, который начинается с `edu_ctf{` и заканчивается `}`."
+    cost: 0
+files:
+  - dist/ciphertext.hex
+  - dist/readme.txt
+tags:
+  - cryptography
+  - bonus

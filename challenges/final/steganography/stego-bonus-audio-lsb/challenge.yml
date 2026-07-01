@@ -1,0 +1,20 @@
+name: Бонусная задача Steganography: тихий LSB
+category: Steganography
+difficulty: medium
+points: 200
+description: |
+  Флаг спрятан в младших битах 16-bit WAV-сэмплов. Файл не нужно слушать как обычный звук: это LSB-задача, а не spectrogram-подход.
+flags:
+  - edu_ctf{audio_lsb_whisper}
+hints:
+  - text: "Флаг не виден в spectrogram и не слышен."
+    cost: 0
+  - text: "Проверьте младший бит каждого 16-bit sample."
+    cost: 25
+  - text: 'Соберите биты в байты до `\0` или `}`.'
+    cost: 50
+files:
+  - dist/whisper.wav
+tags:
+  - steganography
+  - bonus
