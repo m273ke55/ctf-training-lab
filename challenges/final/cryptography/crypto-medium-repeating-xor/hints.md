@@ -1,5 +1,5 @@
-# Hints
+# Подсказки
 
-1. **Hint 1 — мягкая:** XOR becomes easy when part of the plaintext is known.
-2. **Hint 2 — подход:** Use the known prefix `edu_ctf{` to recover bytes of a repeating key.
-3. **Hint 3 — почти решение:** For each possible key length, XOR the first ciphertext bytes with `edu_ctf{`; keep the key that decrypts the whole message to printable text ending in `}`.
+1. **Hint 1 — мягкая:** XOR становится проще, когда известна часть plaintext.
+2. **Hint 2 — подход или инструмент:** Используйте известный префикс `edu_ctf{`, чтобы восстановить байты повторяющегося ключа.
+3. **Hint 3 — почти решение:** Для каждой возможной длины ключа выполните XOR первых байтов ciphertext с `edu_ctf{`; оставьте ключ, который расшифровывает всё сообщение в печатный текст с `}` в конце.

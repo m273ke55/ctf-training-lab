@@ -5,10 +5,10 @@
 | Время | Тема |
 |---|---|
 | 0–10 | Что такое CTF, категории, формат флага `edu_ctf{...}`, правила. |
-| 10–25 | Reverse theory + demo. |
-| 25–40 | Forensics theory + demo. |
-| 40–55 | Cryptography theory + demo. |
-| 55–70 | Steganography theory + demo. |
+| 10–25 | Reverse: теория и demo. |
+| 25–40 | Forensics: теория и demo. |
+| 40–55 | Cryptography: теория и demo. |
+| 55–70 | Steganography: теория и demo. |
 | 70–85 | Мини-практика по 4 категориям. |
 | 85–90 | Вопросы и подготовка ко второй паре. |
 

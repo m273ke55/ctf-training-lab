@@ -1,5 +1,5 @@
-# Hints
+# Подсказки
 
-1. **Hint 1 — мягкая:** Real RSA depends on `n` being too large to factor. Is this `n` large enough?
-2. **Hint 2 — подход:** Use trial division to factor `n`, then compute `phi = (p - 1) * (q - 1)`.
-3. **Hint 3 — почти решение:** Compute `d = pow(e, -1, phi)`, decrypt each block with `pow(c, d, n)`, and convert each integer back to 4 bytes.
+1. **Hint 1 — мягкая:** Реальный RSA держится на том, что `n` слишком велик для факторизации. Достаточно ли велико это `n`?
+2. **Hint 2 — подход или инструмент:** Разложите `n` пробным делением, затем вычислите `phi = (p - 1) * (q - 1)`.
+3. **Hint 3 — почти решение:** Вычислите `d = pow(e, -1, phi)`, расшифруйте каждый блок через `pow(c, d, n)` и преобразуйте каждое целое число обратно в 4 bytes.

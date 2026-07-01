@@ -1,17 +1,17 @@
-name: Crypto Medium: Repeating XOR
+name: Криптография Medium: repeating XOR
 category: Cryptography
 difficulty: medium
 points: 200
 description: |
-  A short repeating-key XOR encrypted flag. Use the known flag prefix to recover the key.
+  Flag зашифрован коротким repeating-key XOR. Используйте известный префикс flag, чтобы восстановить ключ.
 flags:
   - edu_ctf{xor_key_found}
 hints:
-  - text: "Part of the plaintext is already known from the flag format."
+  - text: "Часть plaintext уже известна из формата flag."
     cost: 20
-  - text: "Recover key bytes with ciphertext_byte XOR known_plaintext_byte."
+  - text: "Восстановите байты ключа через ciphertext_byte XOR known_plaintext_byte."
     cost: 40
-  - text: "Try key lengths 3 to 5 and decrypt candidates that start with edu_ctf{."
+  - text: "Попробуйте длины ключа от 3 до 5 и расшифруйте кандидаты, которые начинаются с edu_ctf{."
     cost: 70
 files:
   - dist/ciphertext.hex

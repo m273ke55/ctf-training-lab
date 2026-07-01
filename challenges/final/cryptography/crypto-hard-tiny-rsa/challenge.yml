@@ -1,17 +1,17 @@
-name: Crypto Hard: Tiny RSA
+name: Криптография Hard: маленький RSA
 category: Cryptography
 difficulty: hard-but-fair
 points: 300
 description: |
-  A deliberately tiny RSA instance. Factor n and decrypt the block ciphertexts.
+  Намеренно маленький экземпляр RSA. Разложите n на множители и расшифруйте блочный ciphertext.
 flags:
   - edu_ctf{tiny_rsa_done}
 hints:
-  - text: "The modulus is intentionally small enough for trial division."
+  - text: "Модуль намеренно достаточно мал для пробного деления."
     cost: 30
-  - text: "After factoring n, compute phi and the modular inverse of e."
+  - text: "После факторизации n вычислите phi и обратный элемент к e по модулю phi."
     cost: 60
-  - text: "Decrypt every integer block with pow(c, d, n), then convert 4-byte blocks back to text."
+  - text: "Расшифруйте каждый целочисленный блок через pow(c, d, n), затем преобразуйте 4-байтовые блоки обратно в текст."
     cost: 90
 files:
   - dist/public.txt

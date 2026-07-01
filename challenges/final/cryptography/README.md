@@ -1,13 +1,13 @@
-# Final Cryptography Challenges
+# Финальные задачи: Cryptography
 
-This category contains safe, local, educational cryptography tasks that progress from classical ciphers to small public-key cryptography mistakes.
+Эта категория содержит безопасные локальные учебные задачи по криптографии: от классических шифров до небольших ошибок в криптографии с открытым ключом.
 
-## Implemented tasks
+## Реализованные задачи
 
-| Challenge | Difficulty | Points | Concept |
+| Challenge | Сложность | Баллы | Концепция |
 | --- | --- | ---: | --- |
-| `crypto-easy-caesar-shift` | easy | 100 | Caesar shift brute force and flag-format recognition |
-| `crypto-medium-repeating-xor` | medium | 200 | Repeating-key XOR and known-plaintext recovery |
-| `crypto-hard-tiny-rsa` | hard-but-fair | 300 | Factoring a tiny RSA modulus and decrypting integer blocks |
+| `crypto-easy-caesar-shift` | easy | 100 | brute force сдвига Caesar и распознавание формата флага |
+| `crypto-medium-repeating-xor` | medium | 200 | repeating-key XOR и восстановление ключа по known plaintext |
+| `crypto-hard-tiny-rsa` | hard-but-fair | 300 | факторизация маленького модуля RSA и расшифровка целочисленных блоков |
 
-All public artifacts are generated into each task's `dist/` directory by `src/generate.py`.
+Все публичные артефакты генерируются в каталог `dist/` каждой задачи скриптом `src/generate.py`.

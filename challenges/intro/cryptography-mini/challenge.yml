@@ -1,17 +1,17 @@
-name: Cryptography Mini: Rotates
+name: Мини-задача Cryptography: повороты
 category: Cryptography
 difficulty: intro
 points: 50
 description: |
-  A quick ROT/Caesar practice task after the demo.
+  Быстрая практика с ROT/Caesar после демонстрации.
 flags:
   - edu_ctf{mini_crypto_rotates}
 hints:
-  - text: "The expected plaintext includes the standard flag format."
+  - text: "Ожидаемый plaintext содержит стандартный формат flag."
     cost: 0
-  - text: "Try Caesar/ROT shifts."
+  - text: "Попробуйте сдвиги Caesar/ROT."
     cost: 10
-  - text: "Brute force all 26 reverse shifts and search for edu_ctf{."
+  - text: "Переберите все 26 обратных сдвигов и найдите edu_ctf{."
     cost: 25
 files:
   - dist/ciphertext.txt
