@@ -10,9 +10,9 @@ hints:
   - text: "Начните с определения типа файла и поиска читаемых строк."
     cost: 0
   - text: "Команды `file`, `strings` и `grep` здесь важнее запуска файла."
-    cost: 10
+    cost: 0
   - text: "Отфильтруйте вывод `strings` по `edu_ctf`."
-    cost: 25
+    cost: 0
 files:
   - dist/demo_blob.bin
 tags:

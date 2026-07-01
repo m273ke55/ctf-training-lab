@@ -10,9 +10,9 @@ hints:
   - text: "Ожидаемый plaintext содержит стандартный формат flag."
     cost: 0
   - text: "Попробуйте сдвиги Caesar/ROT."
-    cost: 10
+    cost: 0
   - text: "Переберите все 26 обратных сдвигов и найдите edu_ctf{."
-    cost: 25
+    cost: 0
 files:
   - dist/ciphertext.txt
 tags:
