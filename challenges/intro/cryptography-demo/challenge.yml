@@ -1,0 +1,21 @@
+name: Cryptography Demo: Caesar Shift
+category: Cryptography
+difficulty: intro
+points: 50
+description: |
+  A short classroom Caesar message. The title and text point students toward trying shifts.
+flags:
+  - edu_ctf{crypto_demo_shift}
+hints:
+  - text: "The expected plaintext includes the standard flag format."
+    cost: 0
+  - text: "Try Caesar/ROT shifts."
+    cost: 10
+  - text: "Brute force all 26 reverse shifts and search for edu_ctf{."
+    cost: 25
+files:
+  - dist/message.txt
+tags:
+  - cryptography
+  - caesar
+  - beginner

@@ -1,0 +1,21 @@
+name: Crypto Hard: Tiny RSA
+category: Cryptography
+difficulty: hard-but-fair
+points: 300
+description: |
+  A deliberately tiny RSA instance. Factor n and decrypt the block ciphertexts.
+flags:
+  - edu_ctf{tiny_rsa_done}
+hints:
+  - text: "The modulus is intentionally small enough for trial division."
+    cost: 30
+  - text: "After factoring n, compute phi and the modular inverse of e."
+    cost: 60
+  - text: "Decrypt every integer block with pow(c, d, n), then convert 4-byte blocks back to text."
+    cost: 90
+files:
+  - dist/public.txt
+tags:
+  - cryptography
+  - rsa
+  - factorization
