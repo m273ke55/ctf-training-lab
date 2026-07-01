@@ -1,0 +1,21 @@
+name: Сложная задача Reverse: PYC Lockbox
+category: Reverse
+difficulty: hard-but-fair
+points: 300
+description: |
+  Дан `.pyc` без исходного `.py`; проверку нужно изучить через `dis`, `marshal` и константы code object.
+flags:
+  - edu_ctf{pyc_lockbox_open}
+hints:
+  - text: "`.pyc` можно анализировать без запуска: внутри находится Python bytecode."
+    cost: 0
+  - text: "Используйте `marshal` для чтения code object и `dis` для просмотра байткода."
+    cost: 25
+  - text: "Найдите массив чисел, `XOR_KEY` и `SHIFT`, отмените сдвиг и XOR, затем разверните строку обратно."
+    cost: 50
+files:
+  - dist/lockbox.pyc
+tags:
+  - reverse
+  - python
+  - hard-but-fair

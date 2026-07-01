@@ -1,0 +1,1 @@
+edu_ctf{mini_reverse_strings}
