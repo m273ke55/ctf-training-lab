@@ -1,0 +1,85 @@
+services:
+  python-exec:
+    build: ./challenges/intro/web-demo
+    ports:
+      - "127.0.0.1:5101:5000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    networks: [python_exec_net]
+
+  upload-include:
+    build: ./challenges/final/web/web-hard-upload-include
+    ports:
+      - "127.0.0.1:5102:5000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+      - /var/www/html/uploads:rw,noexec,nosuid,size=16m,uid=33,gid=33
+      - /var/run/apache2:rw,nosuid,size=1m
+      - /var/lock/apache2:rw,nosuid,size=1m
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    networks: [upload_include_net]
+
+  xxe-docx:
+    build: ./challenges/final/web/web-bonus-xxe-docx
+    ports:
+      - "127.0.0.1:5103:5000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    networks: [xxe_docx_net]
+
+  method-head:
+    build: ./challenges/final/web/web-easy-method-head
+    ports:
+      - "127.0.0.1:5104:5000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    networks: [method_head_net]
+
+  command-injection:
+    build: ./challenges/final/web/web-medium-command-injection
+    ports:
+      - "127.0.0.1:5105:5000"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    cap_add: [NET_RAW]
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    networks: [command_injection_net]
+
+networks:
+  python_exec_net: {internal: true}
+  upload_include_net: {internal: true}
+  xxe_docx_net: {internal: true}
+  method_head_net: {internal: true}
+  command_injection_net: {internal: true}

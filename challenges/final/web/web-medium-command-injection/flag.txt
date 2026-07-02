@@ -1,0 +1,1 @@
+edu_ctf{newline_command_injection}

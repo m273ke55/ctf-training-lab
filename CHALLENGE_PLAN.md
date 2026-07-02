@@ -411,7 +411,7 @@
 
 ## Extension pack — реализовано
 
-После расширения в репозитории 28 задач: 12 intro-задач и 16 final-задач.
+После расширения и интеграции Web в репозитории 33 задачи: 13 intro-задач и 20 final-задач.
 
 ### Дополнительные intro-задачи
 
@@ -426,3 +426,18 @@
 - `forensics-bonus-log-timeline` — Forensics, medium, 200 баллов, анализ server.log и base64 payload, флаг `edu_ctf{logs_tell_story}`. Статус: реализовано.
 - `crypto-bonus-vigenere-keyword` — Cryptography, medium, 200 баллов, Vigenere с ключом `campus`, флаг `edu_ctf{vigenere_bonus}`. Статус: реализовано.
 - `stego-bonus-audio-lsb` — Steganography, medium, 200 баллов, WAV LSB, флаг `edu_ctf{audio_lsb_whisper}`. Статус: реализовано.
+
+## Web pack — реализовано
+
+Web-задачи являются локальными HTTP-сервисами. Они собираются через `docker-compose.web.yml`, изолированы друг от друга и проверяются скриптом `scripts/smoke_web.py`.
+
+### Вводная демонстрация
+
+- `web-demo` — Web, intro, выполнение Python-кода в ограниченном контейнере и чтение `/flag.txt`, флаг `edu_ctf{python_exec_breakout}`. Статус: реализовано.
+
+### Финальные Web-задачи
+
+- `web-easy-method-head` — Web, easy, 100 баллов, анализ HTTP HEAD и заголовка `X-Flag`, флаг `edu_ctf{head_method_reveals_flag}`. Статус: реализовано.
+- `web-medium-command-injection` — Web, medium, 200 баллов, command injection через перевод строки и обход blacklist, флаг `edu_ctf{newline_command_injection}`. Статус: реализовано.
+- `web-hard-upload-include` — Web, hard-but-fair, 300 баллов, цепочка загрузки файла и PHP local include, флаг `edu_ctf{upload_include_chain}`. Статус: реализовано.
+- `web-bonus-xxe-docx` — Web, medium bonus, 200 баллов, XXE в `word/document.xml` контейнера DOCX, флаг `edu_ctf{xxe_reads_local_files}`. Статус: реализовано.

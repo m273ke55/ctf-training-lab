@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн МФЦ</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f5; color: #173c2b; margin: 0; }
+        main { max-width: 620px; margin: 30px auto; padding: 0 16px; }
+        .card { background: white; border: 1px solid #2f855a; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        label { display: block; margin-top: 12px; font-weight: 600; }
+        input { box-sizing: border-box; width: 100%; padding: 9px; margin-top: 4px; }
+        button { width: 100%; margin-top: 18px; padding: 11px; border: 0; border-radius: 5px; background: #238636; color: white; cursor: pointer; }
+        .error { border-color: #c53030; color: #9b2c2c; }
+        .success { border-color: #238636; overflow-wrap: anywhere; }
+        pre { white-space: pre-wrap; text-align: left; }
+    </style>
+</head>
+<body>
+<main>
+    <section class="card">
+        <h1>Онлайн МФЦ</h1>
+        <p>Отправьте заявление на льготное получение подсказок для соревнования. Заявление принимается только в формате DOCX.</p>
+    </section>
+
+    <form class="card" action="/" method="post" enctype="multipart/form-data">
+        <label>Имя<input type="text" name="name" required></label>
+        <label>Фамилия<input type="text" name="family" required></label>
+        <label>Отчество<input type="text" name="father" required></label>
+        <label>Команда<input type="text" name="team" required></label>
+        <input type="hidden" name="type" value="get_hints">
+        <label>Заявление DOCX<input type="file" name="file" accept=".docx" required></label>
+        <button type="submit">Получить льготу</button>
+    </form>
+
+    {% if error %}<section class="card error">{{ error }}</section>{% endif %}
+    {% if success %}<section class="card success"><h2>Заявление принято</h2><pre>{{ success }}</pre></section>{% endif %}
+</main>
+</body>
+</html>

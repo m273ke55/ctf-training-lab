@@ -1,0 +1,26 @@
+name: "Бонусная задача Web: Заявление в МФЦ"
+category: Web
+difficulty: medium
+points: 200
+description: |
+  Онлайн-МФЦ принимает только DOCX-заявления и обрабатывает их XML-содержимое. Подготовьте документ, который раскроет локальный флаг.
+flags:
+  - edu_ctf{xxe_reads_local_files}
+hints:
+  - text: "DOCX — это ZIP-контейнер, внутри которого находится word/document.xml."
+    cost: 25
+  - text: "XML-парсер разрешает DTD и внешние сущности."
+    cost: 50
+  - text: "Добавьте SYSTEM-сущность file:///flag.txt в word/document.xml и вставьте её в текст документа."
+    cost: 75
+files: []
+tags:
+  - web
+  - xxe
+  - docx
+  - xml
+  - bonus
+service:
+  type: http
+  port: 5000
+  healthcheck: /

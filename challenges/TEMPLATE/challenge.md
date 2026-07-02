@@ -1,6 +1,6 @@
 # Название задачи
 
-- **Категория:** Reverse / Forensics / Cryptography / Steganography
+- **Категория:** Reverse / Forensics / Cryptography / Steganography / Web
 - **Сложность:** easy / medium / hard-but-fair
 
 ## Описание
@@ -10,6 +10,8 @@
 ## Файлы
 
 Перечислите публичные файлы из `dist/`.
+
+Для Web-задачи вместо файлов укажите адрес запущенного учебного сервиса в CTFd.
 
 ## Формат флага
 

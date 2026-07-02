@@ -1,0 +1,24 @@
+name: "Средняя задача Web: Повторите ещё раз"
+category: Web
+difficulty: medium
+points: 200
+description: |
+  Сервис диагностики запускает ping и блокирует очевидные специальные символы. Обойдите фильтр и прочитайте флаг.
+flags:
+  - edu_ctf{newline_command_injection}
+hints:
+  - text: "Проверьте, как shell разделяет команды помимо символов ;, &, и |."
+    cost: 10
+  - text: "Перевод строки тоже является разделителем команд."
+    cost: 25
+  - text: "Передайте newline и используйте команду чтения /flag.txt без слова cat."
+    cost: 50
+files: []
+tags:
+  - web
+  - command-injection
+  - filter-bypass
+service:
+  type: http
+  port: 5000
+  healthcheck: /
