@@ -1,4 +1,4 @@
-FROM php:8.3-apache
+FROM php:8.3-apache-trixie
 
 COPY src/ /var/www/html/
 COPY flag.txt /flag.txt

@@ -26,7 +26,7 @@ DOCX является ZIP-архивом. Сервис извлекает `word/
 
    ```bash
    curl -F name=a -F family=b -F father=c -F team=d -F type=get_hints \
-     -F file=@payload.docx http://127.0.0.1:5103/
+     -F file=@payload.docx http://127.0.0.1:5105/
    ```
 
 4. Прочитать раскрытый флаг в сериализованном XML.

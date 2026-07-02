@@ -1,0 +1,43 @@
+name: Validate training lab
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build file challenges and run validators
+        run: bash scripts/build_all.sh
+
+      - name: Package file challenges
+        run: |
+          python3 scripts/package_dist.py
+          test "$(find build/packages -maxdepth 1 -type f -name '*.zip' | wc -l)" -eq 28
+
+      - name: Build Web challenge images
+        run: docker compose -f docker-compose.web.yml build
+
+      - name: Start Web challenge services
+        run: docker compose -f docker-compose.web.yml up -d --wait
+
+      - name: Exercise Web solution paths
+        run: python3 scripts/smoke_web.py
+
+      - name: Show container state and logs on failure
+        if: failure()
+        run: |
+          docker compose -f docker-compose.web.yml ps
+          docker compose -f docker-compose.web.yml logs --no-color
+
+      - name: Stop Web challenge services
+        if: always()
+        run: docker compose -f docker-compose.web.yml down --volumes --remove-orphans

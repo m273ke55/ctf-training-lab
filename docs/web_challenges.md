@@ -5,10 +5,10 @@
 | ID | Механика | Сложность | Локальный адрес |
 |---|---|---:|---|
 | `web-demo` | выполнение пользовательского Python-кода | intro | `http://127.0.0.1:5101` |
-| `web-hard-upload-include` | цепочка upload + local include | hard-but-fair | `http://127.0.0.1:5102` |
-| `web-bonus-xxe-docx` | XXE в `word/document.xml` | medium bonus | `http://127.0.0.1:5103` |
-| `web-easy-method-head` | различие HTTP-методов и заголовков | easy | `http://127.0.0.1:5104` |
-| `web-medium-command-injection` | command injection через newline | medium | `http://127.0.0.1:5105` |
+| `web-easy-method-head` | различие HTTP-методов и заголовков | easy | `http://127.0.0.1:5102` |
+| `web-medium-command-injection` | command injection через newline | medium | `http://127.0.0.1:5103` |
+| `web-hard-upload-include` | цепочка upload + local include | hard-but-fair | `http://127.0.0.1:5104` |
+| `web-bonus-xxe-docx` | XXE в `word/document.xml` | medium bonus | `http://127.0.0.1:5105` |
 
 ## Локальный запуск
 
@@ -35,6 +35,8 @@ python3 scripts/validate_web_services.py
 ```bash
 python3 scripts/smoke_web.py
 ```
+
+В pull request эти же шаги автоматически выполняет workflow `.github/workflows/validate.yml`, включая реальную сборку пяти Docker-образов.
 
 ## Состав задачи
 

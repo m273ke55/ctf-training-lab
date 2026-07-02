@@ -31,9 +31,10 @@ def index():
 
     try:
         with zipfile.ZipFile(BytesIO(payload)) as docx:
-            xml_content = docx.read("word/document.xml")
-        if len(xml_content) > MAX_XML_BYTES:
-            raise ValueError("document.xml is too large")
+            document_info = docx.getinfo("word/document.xml")
+            if document_info.file_size > MAX_XML_BYTES:
+                raise ValueError("document.xml is too large")
+            xml_content = docx.read(document_info)
     except (KeyError, ValueError, zipfile.BadZipFile):
         return render_template(
             "index.html",

