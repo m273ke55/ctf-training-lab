@@ -12,3 +12,5 @@
 | `tshark` | PCAP в CLI | `tshark -r traffic.pcap` | Forensics |
 | `python3` | Solver-скрипты | `python3 solve.py` | Crypto, Reverse |
 | `objdump` | Дизассемблирование | `objdump -d app` | Reverse |
+| `curl` | HTTP-запросы и заголовки | `curl -i http://target/` | Web |
+| Browser DevTools | Просмотр Network/Storage/HTML | открыть вкладку Network | Web |

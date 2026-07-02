@@ -1,0 +1,1 @@
+edu_ctf{head_method_reveals_flag}

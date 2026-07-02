@@ -1,4 +1,4 @@
-# category может быть: Reverse, Forensics, Cryptography, Steganography
+# category может быть: Reverse, Forensics, Cryptography, Steganography, Web
 name: Пример задачи
 category: Reverse
 difficulty: easy
@@ -19,3 +19,8 @@ files:
 tags:
   - educational
   - beginner
+# Для Web-задачи files обычно пуст, а сервис описывается так:
+# service:
+#   type: http
+#   port: 5000
+#   healthcheck: /

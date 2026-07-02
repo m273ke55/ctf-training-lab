@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.git/
+solve.md
+challenge.yml
+challenge.md

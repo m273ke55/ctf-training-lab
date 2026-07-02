@@ -1,0 +1,24 @@
+name: "Демонстрация Web: Python Playground"
+category: Web
+difficulty: intro
+points: 0
+description: |
+  Онлайн-интерпретатор выполняет Python-код внутри учебного контейнера. Найдите флаг в окружении сервиса.
+flags:
+  - edu_ctf{python_exec_breakout}
+hints:
+  - text: "Проверьте, какие обычные операции с файлами доступны выполняемому коду."
+    cost: 0
+  - text: "Флаг хранится в локальной файловой системе контейнера."
+    cost: 0
+  - text: "Попробуйте прочитать /flag.txt средствами Python."
+    cost: 0
+files: []
+tags:
+  - web
+  - rce
+  - python
+service:
+  type: http
+  port: 5000
+  healthcheck: /

@@ -1,0 +1,19 @@
+name: "Простая задача Web: Заголовок реестра"
+category: Web
+difficulty: easy
+points: 100
+description: |
+  Административный раздел отвечает отказом. Изучите HTTP-протокол и найдите флаг.
+flags:
+  - edu_ctf{head_method_reveals_flag}
+hints:
+  - text: "Проверьте разные HTTP-методы."
+    cost: 10
+files: []
+tags:
+  - web
+  - http-methods
+service:
+  type: http
+  port: 5000
+  healthcheck: /

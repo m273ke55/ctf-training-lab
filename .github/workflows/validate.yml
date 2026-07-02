@@ -1,0 +1,58 @@
+name: Validate training lab
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build file challenges and run validators
+        run: bash scripts/build_all.sh
+
+      - name: Package file challenges
+        run: |
+          python3 scripts/package_dist.py
+          test "$(find build/packages -maxdepth 1 -type f -name '*.zip' | wc -l)" -eq 28
+
+      - name: Build Web challenge images
+        run: |
+          docker compose -f docker-compose.web.yml config
+          docker compose -f docker-compose.web.yml build
+
+      - name: Start Web challenge services
+        run: docker compose -f docker-compose.web.yml up -d --wait
+
+      - name: Verify published ports and Gunicorn startup logs
+        run: |
+          docker compose -f docker-compose.web.yml ps
+          test "$(docker compose -f docker-compose.web.yml port web-demo 5000)" = "127.0.0.1:5101"
+          test "$(docker compose -f docker-compose.web.yml port web-easy-method-head 5000)" = "127.0.0.1:5102"
+          test "$(docker compose -f docker-compose.web.yml port web-medium-command-injection 5000)" = "127.0.0.1:5103"
+          test "$(docker compose -f docker-compose.web.yml port web-hard-upload-include 80)" = "127.0.0.1:5104"
+          test "$(docker compose -f docker-compose.web.yml port web-bonus-xxe-docx 5000)" = "127.0.0.1:5105"
+          if docker compose -f docker-compose.web.yml logs --no-color | grep -Fq "Control server error"; then
+            echo "Gunicorn control socket initialization failed"
+            exit 1
+          fi
+
+      - name: Exercise Web solution paths
+        run: python3 scripts/smoke_web.py
+
+      - name: Show container state and logs on failure
+        if: failure()
+        run: |
+          docker compose -f docker-compose.web.yml ps
+          docker compose -f docker-compose.web.yml logs --no-color
+
+      - name: Stop Web challenge services
+        if: always()
+        run: docker compose -f docker-compose.web.yml down --volumes --remove-orphans

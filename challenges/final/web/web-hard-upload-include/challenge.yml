@@ -1,0 +1,25 @@
+name: "Сложная задача Web: Загрузка с продолжением"
+category: Web
+difficulty: hard-but-fair
+points: 300
+description: |
+  Сайт разрешает загружать изображения и выбирать внутренние страницы. Объедините две особенности приложения и получите флаг.
+flags:
+  - edu_ctf{upload_include_chain}
+hints:
+  - text: "Расширение загруженного файла проверяется, но его содержимое — нет."
+    cost: 25
+  - text: "Параметр page подключает локальный файл через PHP include."
+    cost: 50
+  - text: "Загрузите PHP-код с разрешённым расширением и подключите uploads/имя-файла через page."
+    cost: 75
+files: []
+tags:
+  - web
+  - file-upload
+  - local-file-inclusion
+  - php
+service:
+  type: http
+  port: 80
+  healthcheck: /

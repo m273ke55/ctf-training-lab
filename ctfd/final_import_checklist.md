@@ -18,6 +18,12 @@
    ```
 
 4. Проверьте, что zip-архивы появились в каталоге `build/packages/`.
+5. Запустите и проверьте Web-сервисы:
+
+   ```bash
+   docker compose -f docker-compose.web.yml up --build -d
+   python3 scripts/smoke_web.py
+   ```
 
 ## Что переносить в CTFd
 
@@ -31,8 +37,9 @@
 - `flags` — флаг;
 - `hints` — подсказки и их стоимость;
 - `files` — публичные файлы из `dist/`.
+- `service` — тип, внутренний порт и healthcheck Web-сервиса.
 
-В CTFd загружайте zip-архив конкретной задачи из `build/packages/` или публичные файлы, перечисленные в `files`.
+В CTFd для файловой задачи загрузите zip-архив из `build/packages/`. Для Web-задачи оставьте `files: []` и добавьте внешний URL развернутого сервиса в условие или поле connection info.
 
 ## Что не загружать в CTFd
 
@@ -43,6 +50,7 @@
 - `src/`;
 - `.gitkeep`;
 - `build/` целиком.
+- Dockerfile, исходники приложения и локальный `docker-compose.web.yml`.
 
 ## Проверка флага
 
@@ -62,7 +70,7 @@
 - Final easy: `difficulty: easy`, `points: 100`.
 - Final medium: `difficulty: medium`, `points: 200`.
 - Final hard-but-fair: `difficulty: hard-but-fair`, `points: 300`.
-- Допустимые категории: `Reverse`, `Forensics`, `Cryptography`, `Steganography`.
+- Допустимые категории: `Reverse`, `Forensics`, `Cryptography`, `Steganography`, `Web`.
 
 ## Чек-лист intro-задач
 
@@ -78,8 +86,9 @@
 - [ ] `forensics-extra-mini`
 - [ ] `cryptography-extra-mini`
 - [ ] `steganography-extra-mini`
+- [ ] `web-demo`
 
-Для каждой intro-задачи проверьте название, категорию, нулевые баллы, флаг, подсказки и публичный файл из `dist/`.
+Для каждой intro-задачи проверьте название, категорию, нулевые баллы, флаг и подсказки. Для файловой задачи проверьте `dist/`, для `web-demo` — URL сервиса.
 
 ## Чек-лист final-задач
 
@@ -99,8 +108,12 @@
 - [ ] `forensics-bonus-log-timeline`
 - [ ] `crypto-bonus-vigenere-keyword`
 - [ ] `stego-bonus-audio-lsb`
+- [ ] `web-easy-method-head`
+- [ ] `web-medium-command-injection`
+- [ ] `web-hard-upload-include`
+- [ ] `web-bonus-xxe-docx`
 
-Для каждой final-задачи проверьте сложность, баллы, флаг, подсказки и публичные файлы из `dist/`.
+Для каждой final-задачи проверьте сложность, баллы, флаг и подсказки. Для Web-задач вместо `dist/` проверьте внешний URL сервиса.
 
 ## Финальная проверка перед занятием
 
@@ -111,6 +124,8 @@ bash scripts/build_all.sh
 python3 scripts/verify_flags.py
 python3 scripts/package_dist.py
 find build/packages -maxdepth 1 -type f -name '*.zip' | sort
+docker compose -f docker-compose.web.yml ps
+python3 scripts/smoke_web.py
 ```
 
-Ожидаемый результат — 28 zip-архивов: 12 intro-задач и 16 final-задач. После загрузки в CTFd откройте каждую задачу в режиме предпросмотра, скачайте публичные файлы и убедитесь, что флаг принимается только в формате `edu_ctf{...}`.
+Ожидаемый результат — 28 zip-архивов для файловых задач и 5 работающих Web-сервисов: всего 13 intro-задач и 20 final-задач. После настройки CTFd проверьте каждую задачу в режиме предпросмотра, скачивание файлов или открытие сервиса и приём правильного флага.
