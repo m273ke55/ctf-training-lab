@@ -83,8 +83,10 @@ def main() -> int:
             for label, needle in compose_checks.items():
                 if needle not in compose:
                     errors.append(f"{service}: inconsistent {label} in docker-compose.web.yml")
-        if compose.count("internal: true") != len(EXPECTED):
-            errors.append("docker-compose.web.yml: every service must have a separate internal network")
+        if "internal: true" in compose:
+            errors.append("docker-compose.web.yml: internal networks suppress host port publishing")
+        if compose.count("driver: bridge") != len(EXPECTED):
+            errors.append("docker-compose.web.yml: every service must have a separate bridge network")
         if compose.count("init: true") != len(EXPECTED):
             errors.append("docker-compose.web.yml: every service must enable an init process")
         for variable in ("HOME: /tmp", "TMPDIR: /tmp", "XDG_RUNTIME_DIR: /tmp"):

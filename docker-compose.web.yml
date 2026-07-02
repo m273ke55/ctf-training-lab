@@ -99,8 +99,13 @@ services:
     networks: [web_medium_command_injection_net]
 
 networks:
-  web_demo_net: {internal: true}
-  web_hard_upload_include_net: {internal: true}
-  web_bonus_xxe_docx_net: {internal: true}
-  web_easy_method_head_net: {internal: true}
-  web_medium_command_injection_net: {internal: true}
+  web_demo_net:
+    driver: bridge
+  web_hard_upload_include_net:
+    driver: bridge
+  web_bonus_xxe_docx_net:
+    driver: bridge
+  web_easy_method_head_net:
+    driver: bridge
+  web_medium_command_injection_net:
+    driver: bridge
