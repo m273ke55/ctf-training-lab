@@ -10,17 +10,17 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    "challenges/intro/web-demo": ("intro", 0, "web-demo", 5101),
-    "challenges/final/web/web-easy-method-head": ("easy", 100, "web-easy-method-head", 5102),
-    "challenges/final/web/web-medium-command-injection": ("medium", 200, "web-medium-command-injection", 5103),
-    "challenges/final/web/web-hard-upload-include": ("hard-but-fair", 300, "web-hard-upload-include", 5104),
-    "challenges/final/web/web-bonus-xxe-docx": ("medium", 200, "web-bonus-xxe-docx", 5105),
+    "challenges/intro/web-demo": ("intro", 0, "web-demo", 5101, 5000),
+    "challenges/final/web/web-easy-method-head": ("easy", 100, "web-easy-method-head", 5102, 5000),
+    "challenges/final/web/web-medium-command-injection": ("medium", 200, "web-medium-command-injection", 5103, 5000),
+    "challenges/final/web/web-hard-upload-include": ("hard-but-fair", 300, "web-hard-upload-include", 5104, 80),
+    "challenges/final/web/web-bonus-xxe-docx": ("medium", 200, "web-bonus-xxe-docx", 5105, 5000),
 }
 REQUIRED = ("Dockerfile", "challenge.yml", "challenge.md", "hints.md", "solve.md", "flag.txt")
 FLAG_RE = re.compile(r"^edu_ctf\{[a-zA-Z0-9_!?@#.,:+-]+\}$")
 
 
-def validate_challenge(name: str, difficulty: str, points: int) -> list[str]:
+def validate_challenge(name: str, difficulty: str, points: int, container_port: int) -> list[str]:
     errors: list[str] = []
     challenge = ROOT / name
     for relative in REQUIRED:
@@ -32,13 +32,15 @@ def validate_challenge(name: str, difficulty: str, points: int) -> list[str]:
     dockerfile_path = challenge / "Dockerfile"
     if dockerfile_path.is_file():
         dockerfile = dockerfile_path.read_text(encoding="utf-8")
-        for token in ("COPY flag.txt /flag.txt", "EXPOSE 5000", "HEALTHCHECK"):
+        for token in ("COPY flag.txt /flag.txt", f"EXPOSE {container_port}", "HEALTHCHECK"):
             if token not in dockerfile:
                 errors.append(f"{name}: Dockerfile missing {token}")
         if ":latest" in dockerfile:
             errors.append(f"{name}: Dockerfile uses a floating latest tag")
         if "web-hard-upload-include" not in name and "USER challenge" not in dockerfile:
             errors.append(f"{name}: Python service must run as non-root")
+        if "web-hard-upload-include" not in name and "--no-control-socket" not in dockerfile:
+            errors.append(f"{name}: Gunicorn control socket must be disabled")
 
     flag_path = challenge / "flag.txt"
     metadata_path = challenge / "challenge.yml"
@@ -54,7 +56,7 @@ def validate_challenge(name: str, difficulty: str, points: int) -> list[str]:
         "difficulty": f"difficulty: {difficulty}",
         "points": f"points: {points}",
         "flag": f"  - {flag}",
-        "service port": "  port: 5000",
+        "service port": f"  port: {container_port}",
     }
     for label, needle in checks.items():
         if needle not in metadata:
@@ -64,19 +66,19 @@ def validate_challenge(name: str, difficulty: str, points: int) -> list[str]:
 
 def main() -> int:
     errors: list[str] = []
-    for name, (difficulty, points, _, _) in EXPECTED.items():
-        errors.extend(validate_challenge(name, difficulty, points))
+    for name, (difficulty, points, _, _, container_port) in EXPECTED.items():
+        errors.extend(validate_challenge(name, difficulty, points, container_port))
 
     compose_path = ROOT / "docker-compose.web.yml"
     if not compose_path.is_file():
         errors.append("missing docker-compose.web.yml")
     else:
         compose = compose_path.read_text(encoding="utf-8")
-        for path, (_, _, service, host_port) in EXPECTED.items():
+        for path, (_, _, service, host_port, container_port) in EXPECTED.items():
             compose_checks = {
                 "service": f"  {service}:",
                 "build context": f"build: ./{path}",
-                "port": f'"127.0.0.1:{host_port}:5000"',
+                "port": f'"127.0.0.1:{host_port}:{container_port}"',
             }
             for label, needle in compose_checks.items():
                 if needle not in compose:
@@ -85,6 +87,9 @@ def main() -> int:
             errors.append("docker-compose.web.yml: every service must have a separate internal network")
         if compose.count("init: true") != len(EXPECTED):
             errors.append("docker-compose.web.yml: every service must enable an init process")
+        for variable in ("HOME: /tmp", "TMPDIR: /tmp", "XDG_RUNTIME_DIR: /tmp"):
+            if compose.count(variable) != 4:
+                errors.append(f"docker-compose.web.yml: every Gunicorn service must set {variable}")
 
     for source in sorted(ROOT.rglob("*.py")):
         try:

@@ -29,6 +29,14 @@ jobs:
       - name: Start Web challenge services
         run: docker compose -f docker-compose.web.yml up -d --wait
 
+      - name: Verify published ports and Gunicorn startup logs
+        run: |
+          docker compose -f docker-compose.web.yml ps
+          if docker compose -f docker-compose.web.yml logs --no-color | grep -Fq "Control server error"; then
+            echo "Gunicorn control socket initialization failed"
+            exit 1
+          fi
+
       - name: Exercise Web solution paths
         run: python3 scripts/smoke_web.py
 

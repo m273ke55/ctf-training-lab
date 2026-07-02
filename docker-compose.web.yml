@@ -2,6 +2,10 @@ services:
   web-demo:
     build: ./challenges/intro/web-demo
     init: true
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      XDG_RUNTIME_DIR: /tmp
     ports:
       - "127.0.0.1:5101:5000"
     read_only: true
@@ -19,7 +23,7 @@ services:
     build: ./challenges/final/web/web-hard-upload-include
     init: true
     ports:
-      - "127.0.0.1:5104:5000"
+      - "127.0.0.1:5104:80"
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=16m
@@ -36,6 +40,10 @@ services:
   web-bonus-xxe-docx:
     build: ./challenges/final/web/web-bonus-xxe-docx
     init: true
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      XDG_RUNTIME_DIR: /tmp
     ports:
       - "127.0.0.1:5105:5000"
     read_only: true
@@ -52,6 +60,10 @@ services:
   web-easy-method-head:
     build: ./challenges/final/web/web-easy-method-head
     init: true
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      XDG_RUNTIME_DIR: /tmp
     ports:
       - "127.0.0.1:5102:5000"
     read_only: true
@@ -68,6 +80,10 @@ services:
   web-medium-command-injection:
     build: ./challenges/final/web/web-medium-command-injection
     init: true
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      XDG_RUNTIME_DIR: /tmp
     ports:
       - "127.0.0.1:5103:5000"
     read_only: true

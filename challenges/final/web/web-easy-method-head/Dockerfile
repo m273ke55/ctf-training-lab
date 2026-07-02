@@ -17,4 +17,4 @@ RUN chmod 0444 /flag.txt
 USER challenge
 EXPOSE 5000
 HEALTHCHECK --interval=10s --timeout=3s --retries=5 CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/', timeout=2)"]
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--threads", "2", "--timeout", "10", "server:app"]
+CMD ["gunicorn", "--no-control-socket", "--bind", "0.0.0.0:5000", "--workers", "2", "--threads", "2", "--timeout", "10", "server:app"]
